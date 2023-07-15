@@ -5,9 +5,15 @@ const Parent = () => {
     let[showModal, setShowModal] = useState(false)
 
  return(
-    <div className="parent">
-        <h1>Parent Component</h1>
-        <Child setShowModal={setShowModal}/>
+    <div className="child">
+        <Child changeState={setShowModal}/>
+        {
+                showModal &&
+                <div>
+                    <h3>Modal Content</h3>
+                    <div>This is the modal content.</div>
+                </div> 
+            }
     </div>
  )   
 }
